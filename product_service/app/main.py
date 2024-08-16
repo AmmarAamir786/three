@@ -1,6 +1,7 @@
 # main.py
 from contextlib import asynccontextmanager
 from typing import Annotated
+from product_service.app.topic import create_topic
 from sqlmodel import Session, SQLModel
 from fastapi import FastAPI, Depends, HTTPException
 from typing import AsyncGenerator
@@ -28,6 +29,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
     task = asyncio.create_task(consume_messages(
         settings.KAFKA_PRODUCT_TOPIC, 'broker:19092'))
+    await create_topic(topic=settings.KAFKA_PRODUCT_TOPIC)
     # asyncio.create_task(consume_inventory_messages(
     #     "AddStock",
     #     'broker:19092'
