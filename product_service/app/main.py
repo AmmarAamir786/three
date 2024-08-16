@@ -1,7 +1,7 @@
 # main.py
 from contextlib import asynccontextmanager
 from typing import Annotated
-from product_service.app.topic import create_topic
+from app.topic import create_topic
 from sqlmodel import Session, SQLModel
 from fastapi import FastAPI, Depends, HTTPException
 from typing import AsyncGenerator
