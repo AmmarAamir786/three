@@ -1,7 +1,7 @@
 import asyncio
 from aiokafka.errors import KafkaConnectionError
 from aiokafka.admin import AIOKafkaAdminClient, NewTopic
-from product_service.setting import BOOTSTRAP_SERVER
+from app.settings import BOOTSTRAP_SERVER
 
 
 MAX_RETRIES = 5
