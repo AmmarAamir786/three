@@ -8,7 +8,7 @@ class Product(SQLModel, table=True):
     expiry: str | None = None
     brand: str | None = None
     weight: float | None = None
-    category: str # It shall be pre defined by Platform
+    category: str # It shall be predefined by Platform
     sku: str | None = None
     # rating: list["ProductRating"] = Relationship(back_populates="product")
     # image: str # Multiple | URL Not Media | One to Manu Relationship
